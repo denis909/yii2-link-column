@@ -30,8 +30,8 @@ class LinkColumn extends \yii\grid\DataColumn
     	}
     	else
     	{
-            $url = $model->{$this->url};
-    	}    	
+            $url = $this->url;
+    	}
 
     	return Html::a($this->linkLabel, $url, $this->linkOptions);
     }
