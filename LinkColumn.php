@@ -5,7 +5,7 @@ namespace denis909\yii;
 use yii\helpers\Html;
 use Closure;
 
-class LinkColumn extends DataColumn
+class LinkColumn extends \yii\grid\DataColumn
 {
 
 	public $contentOptions = [
