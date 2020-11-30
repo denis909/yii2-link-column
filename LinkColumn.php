@@ -22,6 +22,8 @@ class LinkColumn extends \yii\grid\DataColumn
 
 	public $linkOptions = [];
 
+    public $emptyCell = null;
+
     protected function renderDataCellContent($model, $key, $index)
     {
     	if ($this->url instanceof Closure)
@@ -32,6 +34,11 @@ class LinkColumn extends \yii\grid\DataColumn
     	{
             $url = $this->url;
     	}
+
+        if (!$url)
+        {
+            return $this->emptyCell;
+        }
 
     	return Html::a($this->linkLabel, $url, $this->linkOptions);
     }
